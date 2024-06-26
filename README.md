@@ -5,18 +5,6 @@
 
 Welcome to the Learn.3 GitHub Repository! This repository is the hub for all projects related to Learn.3 platform, an innovative educational solution that gamifies learning to bridge the gap between Web2 users and Web3 projects, and engage veteran Web3 questers. Built with Flutter, Learn3 offers a seamless and interactive user experience.
 
-
-Table of Contents
-
-## About Learn.3
-## Features
-## Development Fronts
-## Technologies Used
-## Getting Involved
-## Community and Contributions
-## Contact Us
-
-
 ---
 ## About Learn.3 🎮
 
