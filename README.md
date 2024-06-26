@@ -8,13 +8,13 @@ Welcome to the Learn.3 GitHub Repository! This repository is the hub for all pro
 
 Table of Contents
 
-About Learn.3
-Features
-Development Fronts
-Technologies Used
-Getting Involved
-Community and Contributions
-Contact Us
+## About Learn.3
+## Features
+## Development Fronts
+## Technologies Used
+## Getting Involved
+## Community and Contributions
+## Contact Us
 
 
 ---
@@ -68,13 +68,13 @@ Whether you're a developer, a designer, or just an enthusiast interested in Lear
 ---
 ## Community and Contributions 🌐
 
-Learn.3 is committed to fostering a sustainable and welcoming community. We encourage contributions from everyone and strive to ensure our projects are accessible and easy to use. If you're interested in contributing, contact us mailto:learn3.onboard@gmail.com
+Learn.3 is committed to fostering a sustainable and welcoming community. We encourage contributions from everyone and strive to ensure our projects are accessible and easy to use. If you're interested in contributing, [contact us](mailto:learn3.onboard@gmail.com)
 
 
 ---
 ## Contact Us 📬
 
-For general inquiries about Learn.3 or the Learn.3 Organization, please reach out to us via mailto:learn3.onboard@gmail.com.
+For general inquiries about Learn.3 or the Learn.3 Organization, please [reach out to us](mailto:learn3.onboard@gmail.com).
 
 We're excited to see how you'll contribute to making web3 education more engaging and impactful for everyone! 🌟
 
