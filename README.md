@@ -1,5 +1,4 @@
 # Learn3 Platform 📚🚀
-![LEARN 3-2](https://github.com/Imatifdev/learn3/assets/173906429/cda4608e-94cd-4c5d-832d-0a45eb35b190)
 
 
 ## Welcome to Learn3! 🎉
