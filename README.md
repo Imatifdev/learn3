@@ -17,7 +17,7 @@ Learn.3 is an educational platform that gamifies microlearning, connects users w
 - 🎮 **Gamified Questing Learning**: Earn rewards and level up in the leaderboard as you progress through the microlearning quests.
 - 🎓 **Diverse Content**: Engage with a wide range of subjects and verified partner content.
 - 🛠️ **Onboarding Tools**: Equip Web3 projects with tools to create engaging onboarding experiences for Web2 users.
-- 🏅 **:Questing for Veterans**:: Provide meaningful and engaging quests tailored for experienced Web3 users.
+- 🏅 **Questing for Veterans**: Provide meaningful and engaging quests tailored for experienced Web3 users.
 - 🌐 **Vetted Web3 Projects**: Secure and transparent learning ecosystem.
 - 📱 **Mobile-first**: Available on both Android and iOS.
 - 🏆 **Leaderboards**: Compete with friends and other learners to earn tokens and achieve top rankings.
