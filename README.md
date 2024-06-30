@@ -15,8 +15,8 @@ Learn.3 is an educational platform that gamifies microlearning, connects users w
 ## Features 🌟
 
 - 🎮 **Gamified Quests with MicroLearning**: Earn rewards and level up in the leaderboard as you progress through the microlearning quests.
-- 🏅 **Questing**: Provide meaningful and engaging quests tailored for experienced Web3 users.
-- 🎓 **Diverse Content**: Engage with a wide range of subjects and verified partner content.
+- 🏅 **Questing**: Provide meaningful and engaging quests tailored for experienced Web3 users, as well as Web3 beginners.
+- 🎓 **Diverse Content**: Engage with a wide range of microlearning and quests from verified partners.
 - 🛠️ **Onboarding Tools**: Equip Web3 projects with tools to create engaging onboarding experiences for Web2 users.
 - 🌐 **Vetted Web3 Projects**: Secure and transparent learning ecosystem.
 - 📱 **Mobile-first**: Available on both Android and iOS.
@@ -40,7 +40,7 @@ At Learn.3 we are developing a range of projects, each serving a unique role wit
 
 - **Frontend**: [Flutter](https://flutter.dev/)
 - **Backend**: [Firebase](https://firebase.google.com/)
-- **Blockchain**: [Web3](https://web3.foundation/)
+- **Blockchain**: [Celo Blockchain] (https://celo.org))
 
 
 ---
