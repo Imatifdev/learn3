@@ -70,10 +70,7 @@ We're excited to see how you'll contribute to making web3 education more engagin
 ---
 ## Screenshots 📸
 
-![Screenshot 1](https://path-to-your-screenshot1.png)
-![Screenshot 2](https://path-to-your-screenshot2.png)
-![Screenshot 3](https://path-to-your-screenshot3.png)
-
+![Screenshots README](https://github.com/Imatifdev/learn3/assets/173906429/f402bc64-5dba-4008-a04a-b6f503a347bd)
 
 ---
 ## Installation 🚀
