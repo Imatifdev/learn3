@@ -69,7 +69,10 @@ We're excited to see how you'll contribute to making web3 education more engagin
 
 ---
 ## Screenshots 📸
+Mobile Application
 ![Screenshots README](https://github.com/Imatifdev/learn3/assets/173906429/0f87ca05-a2e0-4a79-a268-c7ca128b04f2)
+Desktop
+![Desktop Overview](https://github.com/Imatifdev/learn3/assets/173906429/819b1d6e-229a-47c9-8569-7d4dc43e8c12)
 
 ---
 ## Installation 🚀
