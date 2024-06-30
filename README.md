@@ -8,7 +8,7 @@ Welcome to the Learn.3 GitHub Repository! This repository is the hub for all pro
 ---
 ## About Learn.3 🎮
 
-Learn.3 is an educational platform that gamifies microlearning, connects users with Web3 projects, and engages Web3 questers while fostering a sustainability aspect of charity donations. Our app is designed to make learning fun, engaging, and rewarding. Users earn tokens by engaging with verified partner content and contribute to vetted sustainability efforts globally in the process. For a monthly fee, Web3 projects get access to AI-powered gamification tools, create learning content, and onboard an engaged and motivated community.
+Learn.3 is an educational platform that gamifies microlearning, connects users with Web3 projects, and engages Web3 questers while fostering embedded sustainability. Our app is designed to make learning fun, engaging, and rewarding. Users earn tokens by engaging with verified partner content and contribute to vetted sustainability efforts globally in the process. For a monthly fee, Web3 projects get access to AI-powered gamification tools, create learning content, and onboard an engaged and motivated community.
 
 
 ---
