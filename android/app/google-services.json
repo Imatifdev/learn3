@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "516649967648",
+    "project_id": "learn3-eeda2",
+    "storage_bucket": "learn3-eeda2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516649967648:android:98aa929abdbb83e9c3dc45",
+        "android_client_info": {
+          "package_name": "com.example.learn3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ypa77wVQAyDDYYx5kvWHzHTByV0FH4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
