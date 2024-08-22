@@ -8,15 +8,15 @@ Welcome to the Learn.3 GitHub Repository! This repository is the hub for all pro
 ---
 ## About Learn.3 🎮
 
-Learn.3 is an educational platform that gamifies microlearning, connects users with Web3 projects, and engages Web3 questers while fostering a sustainability aspect of charity donations. Our app is designed to make learning fun, engaging, and rewarding. Users earn tokens by engaging with verified partner content and contribute to vetted sustainability efforts globally in the process. For a monthly fee, Web3 projects get access to AI-powered gamification tools, create learning content, and onboard an engaged and motivated community.
+Learn.3 is an educational platform that gamifies microlearning, connects users with Web3 projects, and engages Web3 questers while fostering embedded sustainability. Our app is designed to make learning fun, engaging, and rewarding. Users earn tokens by engaging with verified partner content and contribute to vetted sustainability efforts globally in the process. For a monthly fee, Web3 projects get access to AI-powered gamification tools, create learning content, and onboard an engaged and motivated community.
 
 
 ---
 ## Features 🌟
 
 - 🎮 **Gamified Quests with MicroLearning**: Earn rewards and level up in the leaderboard as you progress through the microlearning quests.
-- 🏅 **Questing**: Provide meaningful and engaging quests tailored for experienced Web3 users.
-- 🎓 **Diverse Content**: Engage with a wide range of subjects and verified partner content.
+- 🏅 **Questing**: Provide meaningful and engaging quests tailored for experienced Web3 users, as well as Web3 beginners.
+- 🎓 **Diverse Content**: Engage with a wide range of microlearning and quests from verified partners.
 - 🛠️ **Onboarding Tools**: Equip Web3 projects with tools to create engaging onboarding experiences for Web2 users.
 - 🌐 **Vetted Web3 Projects**: Secure and transparent learning ecosystem.
 - 📱 **Mobile-first**: Available on both Android and iOS.
@@ -40,7 +40,7 @@ At Learn.3 we are developing a range of projects, each serving a unique role wit
 
 - **Frontend**: [Flutter](https://flutter.dev/)
 - **Backend**: [Firebase](https://firebase.google.com/)
-- **Blockchain**: [Web3](https://web3.foundation/)
+- **Blockchain**: [Celo Blockchain] (https://celo.org))
 
 
 ---
@@ -69,11 +69,10 @@ We're excited to see how you'll contribute to making web3 education more engagin
 
 ---
 ## Screenshots 📸
-
-![Screenshot 1](https://path-to-your-screenshot1.png)
-![Screenshot 2](https://path-to-your-screenshot2.png)
-![Screenshot 3](https://path-to-your-screenshot3.png)
-
+Mobile Application
+![Screenshots README](https://github.com/Imatifdev/learn3/assets/173906429/0f87ca05-a2e0-4a79-a268-c7ca128b04f2)
+Desktop
+![Desktop Overview](https://github.com/Imatifdev/learn3/assets/173906429/819b1d6e-229a-47c9-8569-7d4dc43e8c12)
 
 ---
 ## Installation 🚀
