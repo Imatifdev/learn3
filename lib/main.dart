@@ -2,10 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:learn3/Navbar/Botton_Navbar.dart';
 import 'package:learn3/Services/provider/auth.dart';
+import 'package:learn3/authentication/auth_home.dart';
+import 'package:learn3/authentication/login.dart';
 import 'package:learn3/utils/const_values.dart';
 import 'package:learn3/view/NavPages/explore.dart';
-import 'package:learn3/view/home/explore.dart';
+import 'package:learn3/view/course/quiz_landing_page.dart';
+import 'package:learn3/view/home/view_courses.dart';
 import 'package:learn3/view/onboarding/onboarding.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -36,7 +40,7 @@ class MyApp extends StatelessWidget {
               themeMode: themeProvider.themeMode,
               initialRoute: '/',
               routes: {
-                '/': (context) => Explore(),
+                '/': (context) => AuthHome(),
                 '/coursesHome': (context) => HomePage()
               });
         },

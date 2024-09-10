@@ -1,19 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn3/models/course_model.dart';
 import 'package:learn3/view/course/course_detail.dart';
+import 'package:custom_rating_bar/custom_rating_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf6fafe),
       appBar: AppBar(
-        title: Text('View All Courses'),
+        title: const Text('View All Courses'),
       ),
       body: ListView.builder(
         itemCount: courses.length,
         itemBuilder: (context, index) {
           final course = courses[index];
           return Card(
+            elevation: 4,
+            color: Colors.white,
             child: ListTile(
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
@@ -24,7 +29,34 @@ class HomePage extends StatelessWidget {
                     height: 100),
               ),
               title: Text(course.title),
-              subtitle: Text(course.duration),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Total Enrolled Students ${course.enrollments.toString()}',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      Text("Rating:   "),
+                      RatingBar.readOnly(
+                        isHalfAllowed: true,
+                        alignment: Alignment.center,
+                        filledIcon: Icons.star,
+                        size: 15,
+                        emptyIcon: Icons.star_border,
+                        emptyColor: Colors.redAccent,
+                        filledColor: Colors.yellow.shade800,
+                        halfFilledColor: Colors.amberAccent,
+                        halfFilledIcon: Icons.star_half,
+                        initialRating: course.ratings,
+                        maxRating: 5,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              trailing: Icon(CupertinoIcons.right_chevron),
               onTap: () {
                 Navigator.push(
                   context,
@@ -45,7 +77,7 @@ List<Course> courses = [
   Course(
     title: "Introduction to Blockchain",
     points: "100",
-    duration: "4 weeks",
+    duration: "4 days",
     thumbnail:
         "https://www.the-blockchain.com/wp-content/uploads/2022/02/Blockchain-Service.jpg",
     ratings: 4.8,
@@ -111,7 +143,7 @@ List<Course> courses = [
   Course(
     title: "Machine Learning Fundamentals",
     points: "120",
-    duration: "6 weeks",
+    duration: "6 days",
     thumbnail:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU61gHjrBj82OI2mq97amNjrhOcN4ouggl7w&s",
     ratings: 4.7,
@@ -183,7 +215,7 @@ List<Course> courses = [
   Course(
     title: "Web Development with JavaScript",
     points: "80",
-    duration: "5 weeks",
+    duration: "5 days",
     thumbnail:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxs_IDn2MItequVkILR7UMicTp4U6u_rM4g&s",
     ratings: 4.6,
@@ -245,7 +277,7 @@ List<Course> courses = [
   Course(
     title: "Introduction to Python Programming",
     points: "90",
-    duration: "4 weeks",
+    duration: "4 days",
     thumbnail:
         "https://cdn.the-scientist.com/assets/articleNo/71687/aImg/52292/62dc0501-8dda-4bd7-9ba9-fa1a9b8c7cb4-l.jpg",
     ratings: 4.9,
@@ -307,7 +339,7 @@ List<Course> courses = [
   Course(
     title: "Cybersecurity Essentials",
     points: "110",
-    duration: "5 weeks",
+    duration: "5 days",
     thumbnail:
         "https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/11/Cybersecurity-policies-what-is-coming-next.jpg?w=1200&h=673&crop=1",
     ratings: 4.7,
@@ -380,7 +412,7 @@ List<Course> courses = [
   Course(
     title: "Data Science with R",
     points: "130",
-    duration: "8 weeks",
+    duration: "8 days",
     thumbnail:
         "https://cdn.prod.website-files.com/63ccf2f0ea97be12ead278ed/644a18b637053fa3709c5ba2_what-is-data-science.jpg",
     ratings: 4.6,
@@ -447,7 +479,7 @@ List<Course> courses = [
   Course(
     title: "Mobile App Development with Flutter",
     points: "150",
-    duration: "7 weeks",
+    duration: "7 days",
     thumbnail:
         "https://cdn.prod.website-files.com/5f841209f4e71b2d70034471/60bb4a2e143f632da3e56aea_Flutter%20app%20development%20(2).png",
     ratings: 4.9,
@@ -514,7 +546,7 @@ List<Course> courses = [
   Course(
     title: "Cloud Computing with AWS",
     points: "140",
-    duration: "6 weeks",
+    duration: "6 days",
     thumbnail:
         "https://platinumdatarecovery.com/wp-content/uploads/2023/05/cloud-computing-diagram.webp",
     ratings: 4.8,
@@ -581,7 +613,7 @@ List<Course> courses = [
   Course(
     title: "Introduction to Artificial Intelligence",
     points: "160",
-    duration: "9 weeks",
+    duration: "9 days",
     thumbnail:
         "https://datascientest.com/en/files/2021/01/Machine-learning-def-.png",
     ratings: 4.9,
@@ -658,7 +690,7 @@ List<Course> courses = [
   Course(
       title: "DevOps for Beginners",
       points: "90",
-      duration: "6 weeks",
+      duration: "6 days",
       thumbnail:
           "https://miro.medium.com/v2/resize:fit:1400/1*h5Zs-8nFcTrgR1UceyKYXA.png",
       ratings: 4.6,

@@ -7,6 +7,8 @@ class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color color;
   final Color textColor;
+
+  final Color? borderColor;
   final double borderRadius;
   final double padding;
   final double height;
@@ -14,6 +16,7 @@ class CustomButton extends StatelessWidget {
   final bool? icon;
   const CustomButton({
     Key? key,
+    this.borderColor,
     this.icon,
     required this.text,
     this.onPressed,
@@ -29,8 +32,9 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: 40,
+      height: height,
       decoration: BoxDecoration(
+        border: Border.all(color: Color(0xff2C5680)),
         borderRadius: BorderRadius.circular(borderRadius),
         color: color,
       ),
@@ -43,7 +47,7 @@ class CustomButton extends StatelessWidget {
             Center(
               child: Text(text,
                   style: AppConstants.bodyText(
-                    fontSize: 18,
+                    fontSize: 16,
                     color: textColor,
                     fontWeight: FontWeight.w600,
                   )),

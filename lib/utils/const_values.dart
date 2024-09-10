@@ -73,7 +73,7 @@ class AppConstants {
     );
   }
 
-  static Color primaryColor = const Color(0xffE6007E);
+  static Color primaryColor = const Color(0xff2C5680);
   static Color secondaryColor = const Color(0xff969ECD);
   static Color textColor = const Color(0xff677294);
   static Color lightGreen = const Color(0xffe3f2df);

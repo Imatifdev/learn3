@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:learn3/Navbar/Botton_Navbar.dart';
 import 'package:learn3/Services/provider/auth.dart';
 import 'package:learn3/Utils/media_urls.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,6 +30,8 @@ class _SignupState extends State<Signup> {
   final TextEditingController des = TextEditingController();
 
   final TextEditingController password = TextEditingController();
+
+  final TextEditingController confirmPassword = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   File? _profileImage;
   bool _termsAccepted = false;
@@ -43,38 +46,61 @@ class _SignupState extends State<Signup> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: theme.scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Form(
-            key: _formKey,
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: height * 0.10,
+                  height: height * 0.05,
                 ),
-                SizedBox(
-                  height: height * 0.15,
-                  width: width,
-                  child: Image.asset(Media.logo),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey.shade300,
+                      child: Icon(Icons.arrow_back),
+                    ),
+                  ],
                 ),
-                // DottedAvatarPicker(
-                //   onImagePicked: (pickedImage) {
-                //     setState(() {
-                //       _profileImage = pickedImage;
-                //     });
-                //   },
-                // ).centered(),
                 SizedBox(
                   height: height * 0.05,
                 ),
                 const Text(
-                  "Create Your Account",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ).centered(),
+                  "Create an Account!",
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Enter your account details below or ",
+                      style: TextStyle(
+                        decorationColor: AppConstants.primaryColor,
+                        fontSize: 16,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => Signup()));
+                      },
+                      child: Text(
+                        "log in",
+                        style: TextStyle(
+                            decorationColor: AppConstants.primaryColor,
+                            decoration: TextDecoration.underline,
+                            color: AppConstants.primaryColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: height * 0.07,
                 ),
@@ -155,18 +181,39 @@ class _SignupState extends State<Signup> {
                   controller: password,
                   action: TextInputAction.done,
                 ),
-                SizedBox(
-                  height: height * 0.01,
+                const Text(
+                  "Confirm Password",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                CheckboxListTile(
-                  checkColor: AppConstants.white,
-                  title: Text('I accept the terms and conditions'),
-                  value: _termsAccepted,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _termsAccepted = value ?? false;
-                    });
+                CustomTextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter confirm your password';
+                    }
+                    return null;
                   },
+                  keyboardType: TextInputType.visiblePassword,
+                  lines: 1,
+                  obscureText: isPass,
+                  icon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isPass = !isPass;
+                      });
+                    },
+                    icon: Icon(
+                      isPass
+                          ? CupertinoIcons.eye_slash_fill
+                          : CupertinoIcons.eye_fill,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  hintText: "*******",
+                  controller: confirmPassword,
+                  action: TextInputAction.done,
+                ),
+                SizedBox(
+                  height: 150,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -184,59 +231,6 @@ class _SignupState extends State<Signup> {
                 SizedBox(
                   height: width * 0.06,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Registered Already?",
-                      style: TextStyle(
-                        decorationColor: AppConstants.primaryColor,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(
-                      width: width * 0.04,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (ctx) => Login()));
-                      },
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            decorationColor: AppConstants.primaryColor,
-                            decoration: TextDecoration.underline,
-                            color: AppConstants.primaryColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                      child: Divider(
-                        color: Colors.grey.shade300,
-                        height: 36,
-                      ),
-                    ),
-                  ),
-                  const Text("OR signin with Google"),
-                  Expanded(
-                    child: new Container(
-                        margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                        child: Divider(
-                          color: Colors.grey.shade300,
-                          height: 36,
-                        )),
-                  ),
-                ]),
-                SizedBox(
-                  height: 50,
-                )
               ],
             ),
           ),
@@ -247,7 +241,7 @@ class _SignupState extends State<Signup> {
 
   void _submit() {
     final form = _formKey.currentState;
-    if (form!.validate()) {
+    if (form!.validate() && confirmPassword == password) {
       form.save();
     }
   }
@@ -267,7 +261,8 @@ class _SignupState extends State<Signup> {
       );
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Signup successful')));
-      Navigator.pop(context);
+
+      Navigator.push(context, MaterialPageRoute(builder: (ctx) => BottomNav()));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

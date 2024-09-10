@@ -38,31 +38,64 @@ class _LoginState extends State<Login> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Form(
-            key: _formKey,
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: height * 0.10,
+                  height: height * 0.05,
                 ),
-                SizedBox(
-                  height: height * 0.15,
-                  width: width,
-                  child: Image.asset(Media.logo),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey.shade300,
+                      child: Icon(Icons.arrow_back),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: height * 0.05,
                 ),
                 const Text(
-                  "Welcome Back to Bark Board",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ).centered(),
+                  "Welcome Back!",
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Login Below   or",
+                      style: TextStyle(
+                        decorationColor: AppConstants.primaryColor,
+                        fontSize: 16,
+                      ),
+                    ),
+                    SizedBox(
+                      width: width * 0.04,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => Signup()));
+                      },
+                      child: Text(
+                        "Create Account",
+                        style: TextStyle(
+                            decorationColor: AppConstants.primaryColor,
+                            decoration: TextDecoration.underline,
+                            color: AppConstants.primaryColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: height * 0.07,
                 ),
@@ -120,8 +153,30 @@ class _LoginState extends State<Login> {
                   controller: password,
                   action: TextInputAction.done,
                 ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                SizedBox(
+                  height: 150,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("object");
+                    if (_formKey.currentState!.validate()) {
+                      _login(context);
+                    }
+                  },
+                  child: MyButton(
+                    width: width,
+                    height: height * 0.07,
+                    title: "Signin",
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                       onTap: () {
@@ -141,109 +196,8 @@ class _LoginState extends State<Login> {
                   ],
                 ),
                 SizedBox(
-                  height: height * 0.02,
+                  height: 30,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    print("object");
-                    if (_formKey.currentState!.validate()) {
-                      _login(context);
-                    }
-                  },
-                  child: MyButton(
-                    width: width,
-                    height: height * 0.07,
-                    title: "Login",
-                  ),
-                ),
-                SizedBox(
-                  height: width * 0.06,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Not Registered?",
-                      style: TextStyle(
-                        decorationColor: AppConstants.primaryColor,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(
-                      width: width * 0.04,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (ctx) => Signup()));
-                      },
-                      child: Text(
-                        "Register Now",
-                        style: TextStyle(
-                            decorationColor: AppConstants.primaryColor,
-                            decoration: TextDecoration.underline,
-                            color: AppConstants.primaryColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                      child: Divider(
-                        color: Colors.grey.shade300,
-                        height: 36,
-                      ),
-                    ),
-                  ),
-                  const Text("OR sign in with Google"),
-                  Expanded(
-                    child: Container(
-                        margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                        child: Divider(
-                          color: Colors.grey.shade300,
-                          height: 36,
-                        )),
-                  ),
-                ]),
-                Container(
-                  width: width,
-                  height: height * 0.05,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey.shade300,
-                  ),
-                  child: InkWell(
-                    onTap: () async {
-                      try {
-                        await authService.signInWithGoogle();
-                        // Navigate to the home page or display a success message
-                      } catch (e) {
-                        // Show the error message
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(e.toString())),
-                        );
-                      }
-                    },
-                    borderRadius: BorderRadius.circular(12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Text("SignIn with",
-                              style: AppConstants.bodyText(
-                                fontSize: 18,
-                                color: AppConstants.primaryColor,
-                                fontWeight: FontWeight.w600,
-                              )),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
               ],
             ),
           ),

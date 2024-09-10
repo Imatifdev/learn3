@@ -25,13 +25,15 @@ class ButtonRow extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: 2.0), // Adds some spacing between buttons
+                  horizontal: 6.0), // Adds some spacing between buttons
               child: ElevatedButton(
                 onPressed: () {
                   // Handle button press
                   print('${buttonLabels[index]} button pressed');
                 },
                 style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6)),
                   backgroundColor: Color(0xFF3e8da8), // Background color
                 ),
                 child: Text(

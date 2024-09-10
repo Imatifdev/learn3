@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../utils/const_values.dart';
@@ -17,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconButton? icon;
   const CustomTextFormField(
       {super.key,
-       this.controller,
+      this.controller,
       this.labelText,
       this.hintText,
       this.keyboardType = TextInputType.text,
@@ -52,24 +51,21 @@ class CustomTextFormField extends StatelessWidget {
           filled: true,
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey),
-          suffixIcon: icon,
           contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           labelText: labelText,
           border: OutlineInputBorder(
               borderSide: BorderSide(
-                  color:
-                      textFieldBorderColor), // Customize the focused border color
+                  color: Colors.black), // Customize the focused border color
               borderRadius: BorderRadius.circular(12)),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color:
-                      textFieldBorderColor), // Customize the focused border color
+                  color: Colors.black), // Customize the focused border color
               borderRadius: BorderRadius.circular(12)),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide(
                 color:
-                    AppConstants.white), // Customize the focused border color
+                    AppConstants.black), // Customize the focused border color
           ),
         ),
         keyboardType: keyboardType,

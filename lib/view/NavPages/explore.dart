@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:learn3/utility/buttonRow.dart';
 import 'package:learn3/utility/cryptocard.dart';
 import 'package:learn3/utility/lessoncard.dart';
 import 'package:learn3/view/course/course_detail.dart';
-import 'package:learn3/view/home/explore.dart';
+import 'package:learn3/view/home/view_courses.dart';
 
 class Explore extends StatefulWidget {
   const Explore({super.key});
@@ -31,24 +33,30 @@ class _ExploreState extends State<Explore> {
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Welcome Muhammad',
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF545f71),
-                          fontWeight: FontWeight
-                              .bold), // You can customize the text style
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'Welcome Muhammad',
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF545f71),
+                            fontWeight: FontWeight
+                                .bold), // You can customize the text style
+                      ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      'Expolre',
-                      style: TextStyle(
-                          fontSize: 26,
-                          color: Color(0xFF545f71),
-                          fontWeight: FontWeight
-                              .bold), // You can customize the text style
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'Explore',
+                        style: TextStyle(
+                            fontSize: 26,
+                            color: Color(0xFF545f71),
+                            fontWeight: FontWeight
+                                .bold), // You can customize the text style
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -87,60 +95,68 @@ class _ExploreState extends State<Explore> {
                 )
               ],
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
-                border: Border.all(
-                  color: const Color(0xFFB0BEC5), // Border color
-                  width: 1.5,
-                ),
-              ),
-              child: const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  hintStyle: TextStyle(
-                    color: Color(0xFFB0BEC5), // Hint text color
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(
+                    color: const Color(0xFFB0BEC5), // Border color
+                    width: 1.5,
                   ),
-                  icon: Icon(Icons.search, color: Colors.black),
-                  border: InputBorder.none, // Remove default underline border
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Search',
+                    hintStyle: TextStyle(
+                      color: Color(0xFFB0BEC5), // Hint text color
+                    ),
+                    icon: Icon(Icons.search, color: Colors.black),
+                    border: InputBorder.none, // Remove default underline border
+                  ),
                 ),
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Topics',
-                  style: TextStyle(
-                      fontSize: 23,
-                      color: Color(0xFF545f71),
-                      fontWeight:
-                          FontWeight.bold), // You can customize the text style
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/coursesHome');
-                  },
-                  child: const Text(
-                    'See All',
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Tracks',
                     style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(
-                          0xFF5C6672), // Adjust the color to match your design
-                      decoration:
-                          TextDecoration.underline, // Underline the text
-                      decorationColor: Color(0xFF5C6672), // Underline color
-                      decorationThickness: 1.5, // Thickness of the underline
+                        fontSize: 23,
+                        color: Color(0xFF545f71),
+                        fontWeight: FontWeight
+                            .bold), // You can customize the text style
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/coursesHome');
+                    },
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(
+                            0xFF5C6672), // Adjust the color to match your design
+                        decoration:
+                            TextDecoration.underline, // Underline the text
+                        decorationColor: Color(0xFF5C6672), // Underline color
+                        decorationThickness: 1.5, // Thickness of the underline
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(
               height: 5,
@@ -149,30 +165,39 @@ class _ExploreState extends State<Explore> {
             const SizedBox(
               height: 15,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Most Popular',
-                  style: TextStyle(
-                      fontSize: 23,
-                      color: Color(0xFF545f71),
-                      fontWeight:
-                          FontWeight.bold), // You can customize the text style
-                ),
-                Text(
-                  'See All',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(
-                        0xFF5C6672), // Adjust the color to match your design
-                    decoration: TextDecoration.underline, // Underline the text
-                    decorationColor: Color(0xFF5C6672), // Underline color
-                    decorationThickness: 1.5, // Thickness of the underline
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Most Popular',
+                    style: TextStyle(
+                        fontSize: 23,
+                        color: Color(0xFF545f71),
+                        fontWeight: FontWeight
+                            .bold), // You can customize the text style
                   ),
-                ),
-              ],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/coursesHome');
+                    },
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(
+                            0xFF5C6672), // Adjust the color to match your design
+                        decoration:
+                            TextDecoration.underline, // Underline the text
+                        decorationColor: Color(0xFF5C6672), // Underline color
+                        decorationThickness: 1.5, // Thickness of the underline
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 240, // Set the desired height for the ListView
@@ -206,44 +231,53 @@ class _ExploreState extends State<Explore> {
             const SizedBox(
               height: 15,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Most Popular',
-                  style: TextStyle(
-                      fontSize: 23,
-                      color: Color(0xFF545f71),
-                      fontWeight:
-                          FontWeight.bold), // You can customize the text style
-                ),
-                Text(
-                  'See All',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(
-                        0xFF5C6672), // Adjust the color to match your design
-                    decoration: TextDecoration.underline, // Underline the text
-                    decorationColor: Color(0xFF5C6672), // Underline color
-                    decorationThickness: 1.5, // Thickness of the underline
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'New to Web3',
+                    style: TextStyle(
+                        fontSize: 23,
+                        color: Color(0xFF545f71),
+                        fontWeight: FontWeight
+                            .bold), // You can customize the text style
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/coursesHome');
+                    },
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(
+                            0xFF5C6672), // Adjust the color to match your design
+                        decoration:
+                            TextDecoration.underline, // Underline the text
+                        decorationColor: Color(0xFF5C6672), // Underline color
+                        decorationThickness: 1.5, // Thickness of the underline
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: ListView.builder(
                 itemCount: courses.length,
                 itemBuilder: (context, index) {
-                  return LessonCard(
-                    title: courses[index].title,
-                    subtitle: courses[index].title,
-                    time: courses[index].duration,
-                    points: courses[index].points,
-                    imagePath: courses[index].thumbnail,
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: LessonCard(
+                      title: courses[index].title,
+                      subtitle: courses[index].title,
+                      time: courses[index].duration,
+                      points: courses[index].points,
+                      imagePath: courses[index].thumbnail,
+                    ),
                   );
                 },
               ),
